@@ -63,7 +63,7 @@ function Test-BackupFreshness {
             $result.LatestFile = $newest.Name
             $result.LastWriteTime = $newest.LastWriteTime
             $result.AgeHours = [math]::Round($age, 1)
-            $result.SizeMB = [math]::Round($sizeMB, 2)
+            $result.SizeMB = [math]::Round($sizeMB, 3)
 
             if ($age -gt $MaxAgeHours) {
                 $result.Status = 'Stale'
