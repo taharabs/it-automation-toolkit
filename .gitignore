@@ -1,0 +1,13 @@
+# local test output and reports
+testResults.xml
+*.html
+!docs/*.html
+
+# never commit real HR files, audit files or configs with real names
+*.csv
+!examples/*.example.csv
+healthcheck.psd1
+
+.vscode/
+.idea/
+.DS_Store
