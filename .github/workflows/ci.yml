@@ -56,7 +56,9 @@ jobs:
       - name: Build the sample report
         if: matrix.os == 'ubuntu-latest'
         shell: pwsh
-        run: ./tools/New-SampleReport.ps1 -Path ./out/sample-report.html
+        run: |
+          ./tools/New-SampleReport.ps1 -Path ./out/sample-report.html | Out-Null
+          Get-Content ./out/sample-report.html | ForEach-Object { "REPORT|$_" }
       - name: Upload the sample report
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
