@@ -92,7 +92,7 @@ function Export-ToolkitReport {
 </head>
 <body>
 <h1>$(& $encode $Title)</h1>
-<div class="meta">Generated $generated on $(& $encode $env:COMPUTERNAME)</div>
+<div class="meta">Generated $generated on $(& $encode ([Environment]::MachineName))</div>
 $($body.ToString())
 </body>
 </html>

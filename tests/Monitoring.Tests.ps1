@@ -90,6 +90,7 @@ Describe 'Test-BackupFreshness' {
     It 'flags a backup that is suspiciously small' {
         $result = Test-BackupFreshness -Path $sql.FullName -MinSizeMB 1
         $result.Status | Should -Be 'TooSmall'
+        $result.SizeMB | Should -BeGreaterThan 0
     }
 
     It 'only looks at files matching the filter' {
@@ -168,6 +169,7 @@ Describe 'Export-ToolkitReport' {
         $html | Should -Match '<td class="bad">Critical</td>'
         $html | Should -Match '<td class="warn">Warning</td>'
         $html | Should -Match '<td class="ok">OK</td>'
+        $html | Should -Match ([regex]::Escape([Environment]::MachineName))
     }
 
     It 'builds one section per command' {
