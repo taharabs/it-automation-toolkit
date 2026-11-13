@@ -6,7 +6,7 @@
 
 **The routine jobs of a Windows administrator, written as safe, tested PowerShell.**
 
-A PowerShell module for the work that comes back every week: creating accounts for new staff, closing the accounts of people who leave, finding forgotten accounts, and checking each morning that disks, backups and key servers are healthy. Every command that changes Active Directory supports `-WhatIf`, and everything ends up in a readable HTML report.
+A PowerShell module for the work that comes back every week: creating accounts for new staff, closing the accounts of people who leave, finding forgotten accounts, and checking each morning that disks, backups and key servers are healthy. Every command that changes Active Directory supports `-WhatIf`, everything ends up in a readable HTML report, and 54 tests run on Windows PowerShell 5.1 and PowerShell 7.
 
 | Command | What it does |
 | --- | --- |
